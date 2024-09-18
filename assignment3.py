@@ -175,6 +175,9 @@ def main():
 	2. Changing the colors and markers of the points:
 	   - For the first three individuals, use blue squares.
 	   - For the last two individuals, use orange circles.
+
+    	NOTE: plt.scatter() hasn't been introduced in DS2000 yet. Don't use it in DS2000 HW,
+     	until it is introduced, please.
 	"""
 
 	##################### BEGIN: Starter Code (don't change it, don't copy it, don't move it)
