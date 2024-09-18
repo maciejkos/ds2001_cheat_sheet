@@ -22,6 +22,7 @@ Date:
 
 # == GUIDELINES ==
 # ONLY USE THE INSTRUCTIONS COVERED IN DS2000 and DS2001. DO NOT USE ANY OTHER INSTRUCTIONS, FUNCTIONS, ETC.
+# If it is not in the cheat sheet, you probably shouldn't use it. Cheat sheet: https://github.com/maciejkos/ds2001_cheat_sheet/tree/main
 # FOLLOW THE DS2000 STYLE GUIDE
 
 # Feel free to discuss the assignment with the people around you and help each other out! It’s a great way to learn.
