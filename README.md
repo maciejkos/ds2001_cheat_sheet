@@ -6,7 +6,7 @@ Initially based on: https://learnxinyminutes.com/docs/python/
   schedule: https://docs.google.com/document/d/1KDv5eRDMsIv0cbXdks3B1SaTD-9BIEeoWduqn3NrkFU/edit?usp=sharing
 - DS2000 lecture notes: https://course.ccs.neu.edu/ds2000/schedule.html
 - Canvas: https://northeastern.instructure.com/courses/
-- This cheat sheet: XXXX
+- This cheat sheet: https://github.com/maciejkos/ds2001_cheat_sheet/blob/main/README.md
 
 ### **1. Python's `print()` Function**
 
