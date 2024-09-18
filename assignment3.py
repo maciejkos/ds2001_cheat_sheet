@@ -222,16 +222,16 @@ def main():
 	store_E = 130
 
 
-##################### END: Starter Code (don't change it, don't copy it, don't move it)
-
-### --> Your code goes under each comment below
-# Calculate the mean sales
-
-# Create a bar plot with different colors for each store
-
-# Add a horizontal line representing the mean sales
-
-# Show your plot
+	##################### END: Starter Code (don't change it, don't copy it, don't move it)
+	
+	### --> Your code goes under each comment below
+	# Calculate the mean sales
+	
+	# Create a bar plot with different colors for each store
+	
+	# Add a horizontal line representing the mean sales
+	
+	# Show your plot
 
 
 """
