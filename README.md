@@ -296,10 +296,10 @@ plt.show()  # Display the plot
 
 - **Using for-loops to Read Files**:
     - A `for` loop can be used to iterate over each line in a file and process
-      the data one line at a time.
+      the data one line at a time. Example file is [here](https://raw.githubusercontent.com/maciejkos/ds2001_cheat_sheet/refs/heads/main/data_quant_small.txt).
 
 ```python
-with open("data.txt", "r") as infile:
+with open("data_quant_small.txt", "r") as infile:
 	previous_value = 0  # Set an initial value for comparison
 	for line in infile:
 		current_value = float(line)  # Convert the line to a float
