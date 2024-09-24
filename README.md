@@ -299,7 +299,7 @@ with open("data.txt", "r") as infile:
 ```
 
 
-- **Using `range()` in for-loops**
+- #### **Using `range()` in for-loops**
 
 - **The `range()` Function**:
     - The `range()` function generates a sequence of numbers. You can use it in a `for` loop to repeat actions a specific number of times.
