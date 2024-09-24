@@ -321,29 +321,29 @@ with open("data.txt", "r") as infile:
 for i in range(3):  # Loops 3 times (i will be 0, 1, 2)
 	print("This is loop number:", i)
 ```
-
-- **Specifying a Start and End Value**:
-    - You can provide both a start and an end value with `range(start, end)`,
-      where `start` is included, but `end` is not.
-
-```python
-for i in range(2, 5):  # Loops with i = 2, 3, 4
-	print("Current value of i:", i)
-```
-
-- **Using a Step Value**:
-    - You can also specify a step value using `range(start, end, step)` to skip
-      numbers or count backwards.
-
-```python
-for i in range(0, 10, 2):  # Loops with i = 0, 2, 4, 6, 8
-	print("Even number:", i)
-```
-
-```python
-for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
-	print("Counting down:", i)
-```
+> If you want to know more about `range()`, here you go:
+> - **Specifying a Start and End Value**:
+>     - You can provide both a start and an end value with `range(start, end)`,
+>       where `start` is included, but `end` is not.
+> 
+> ```python
+> for i in range(2, 5):  # Loops with i = 2, 3, 4
+>     print("Current value of i:", i)
+> ```
+> 
+> - **Using a Step Value**:
+>     - You can also specify a step value using `range(start, end, step)` to skip
+>       numbers or count backwards.
+> 
+> ```python
+> for i in range(0, 10, 2):  # Loops with i = 0, 2, 4, 6, 8
+>     print("Even number:", i)
+> ```
+> 
+> ```python
+> for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
+>     print("Counting down:", i)
+> ```
 
 #### **For-loops with `matplotlib`**:
 
@@ -370,7 +370,7 @@ plt.show()
 - **What are Booleans?**
     - Booleans are a special data type that can have one of two values: `True`
       or `False`.
-    - We will need them for conditional statements.
+    - We will need them for comparisons and conditional statements.
 
 ```python
 is_sunny = True
@@ -379,6 +379,23 @@ is_raining = False
 print(is_sunny)  # Output: True
 print(is_raining)  # Output: False
 ```
+
+- **Booleans from Comparisons**:
+    - Comparisons like `==`, `>`, `<`, `>=`,
+      `<=` return `True` or `False`.
+
+```python
+x = 5
+y = 10
+
+print(x == y)  # Output: False (because 5 is not equal to 10)
+print(x < y)  # Output: True (because 5 is less than 10)
+```
+
+### **21. Conditional Statements: `if`, `elif`, `else`**
+
+- **Basic Conditional Logic**:
+    - Use `if`, `elif`, and `else` to handle different conditions.
 
 - **Using Booleans in Conditional Statements**:
     - Booleans can directly control the flow of your program in `if`, `elif`,
@@ -393,15 +410,106 @@ else:
 	print("It's cloudy outside!")
 ```
 
-- **Booleans from Comparisons**:
-    - Comparisons like `==`, `<`, and `>` return `True` or `False`.
+- **What is `if`?**
+    - The `if` statement checks the first condition in a sequence of conditional
+      statements.
+    - If the condition in the `if` statement evaluates to `True`, the code
+      inside the `if` block will execute, and Python will **skip any
+      following `elif` or `else` blocks**.
+    - If the condition is `False`, Python moves to the next condition (if any)
+      in the sequence.
 
 ```python
-x = 5
-y = 10
+x = 10
 
-print(x == y)  # Output: False (because 5 is not equal to 10)
-print(x < y)  # Output: True  (because 5 is less than 10)
+if x > 5:
+	print("x is greater than 5")  # This code runs because x > 5
+```
+
+- **What is `elif`?**
+    - `elif` (short for "else if") comes after an `if` statement and checks
+      additional conditions if the `if` condition was `False`.
+    - You can use multiple `elif` statements to handle different scenarios.
+    - Once an `elif` condition is `True`, Python runs the code inside that block
+      and **skips any further `elif` or `else` blocks**.
+
+```python
+x = 3
+
+if x > 5:
+	print("x is greater than 5")
+elif x == 3:
+	print("x is equal to 3")  # This code runs because x == 3
+elif x < 5:
+	print(
+		"x is less than 5")  # This is skipped because the previous elif was True
+```
+
+- **What is `else`?**
+    - The `else` block is the "catch-all" for cases where none of the `if` or
+      `elif` conditions are `True`.
+    - It does **not** check any condition—if Python reaches an `else` block, it
+      simply runs the code inside.
+
+```python
+x = 1
+
+if x > 5:
+	print("x is greater than 5")
+elif x == 3:
+	print("x is equal to 3")
+else:
+	print(
+		"x is not greater than 5 or equal to 3")  # This code runs because the other conditions were False
+```
+
+### **How `if`, `elif`, and `else` Work Together**
+
+- Python checks conditions **from top to bottom**, and only the **first `True`
+  condition** runs its block of code. After a condition is satisfied, Python *
+  *skips the rest** of the `elif` and `else` blocks.
+- If none of the conditions in `if` or `elif` statements are `True`, the `else`
+  block (if present) will run.
+
+```python
+age = int(input("Enter your age: "))
+
+if age < 13:
+	print("You're a child.")  # This runs if age < 13
+elif age < 20:
+	print("You're a teenager.")  # This runs if age is 13-19
+elif age < 65:
+	print("You're an adult.")  # This runs if age is 20-64
+else:
+	print("You're an older adult.")  # This runs if age is 65 or above
+```
+
+### **Summary of Differences**
+
+- **`if`**: Always comes first and checks the initial condition.
+- **`elif`**: Comes after `if` (and can be repeated multiple times) to check
+  more conditions if the previous ones were `False`.
+- **`else`**: Comes at the end and runs only if none of the `if` or `elif`
+  conditions were `True`. It does not check any conditions itself.
+
+### **22. Boolean Operators: `and`, `or`, `not`**
+
+- **Combining Conditions**:
+    - Use boolean operators to combine conditions in a single `if` statement.
+    - Here, we use `and` to check if both conditions are `True`
+
+```python
+age = int(input("Enter your age: "))
+
+if age >= 18 and age < 65:
+	print("You're an adult.")
+elif age < 18:
+	print("You're a minor.")
+else:
+	print("You're an older adult.")
+
+# Thinking exercise: How would you re-write the above code to replace
+# the `and` with two `if`s? Would it give the right answer?
 ```
 
 - **Logical Operators with Booleans**:
@@ -414,51 +522,6 @@ z = 30
 
 print(x < y and y < z)  # Output: True (both comparisons are True)
 print(not (x == z))  # Output: True (since x is not equal to z)
-```
-
-### **21. Conditional Statements: `if`, `elif`, `else`**
-
-- **Basic Conditional Logic**:
-    - Use `if`, `elif`, and `else` to handle different conditions.
-
-```python
-temperature = float(input("Enter the temperature: "))
-
-if temperature > 30:
-	print("It's hot outside.")
-elif temperature > 20:
-	print("It's warm.")
-else:
-	print("It's cold.")
-```
-
-- **Comparison Operators**:
-    - Use comparison operators to evaluate conditions.
-
-```python
-a = 10
-b = 20
-
-if a < b:
-	print("a is less than b")
-else:
-	print("a is greater than or equal to b")
-```
-
-### **22. Boolean Operators: `and`, `or`, `not`**
-
-- **Combining Conditions**:
-    - Use boolean operators to combine conditions in a single `if` statement.
-
-```python
-age = int(input("Enter your age: "))
-
-if age >= 18 and age < 65:
-	print("You're an adult.")
-elif age < 18:
-	print("You're a minor.")
-else:
-	print("You're an older adult.")
 ```
 
 - **Negation with `not`**:
@@ -476,4 +539,4 @@ else:
 ---
 2024 Maciej Kos
 
-version: 9/24/2024
+version: 9/16/2024
