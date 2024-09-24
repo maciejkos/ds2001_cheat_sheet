@@ -8,6 +8,7 @@ Initially based on: https://learnxinyminutes.com/docs/python/
 - Canvas: https://northeastern.instructure.com/courses/
 - This cheat sheet: https://github.com/maciejkos/ds2001_cheat_sheet/blob/main/README.md
 
+# **Weeks 1 and 2** (W1 and W2)
 ### **1. Python's `print()` Function**
 
 - Use `print()` to display output to the console.
@@ -148,11 +149,9 @@ b = a  # Point b at what a is pointing to
 text_to_print = "Hello " + "world!"
 print(text_to_print)  # this should be ok
 ```
-
 ---
 
-# **New Material** (W3)
-
+# **Week 3** (W3)
 ### **16. Math Functions**
 
 - **Rounding**:
@@ -278,6 +277,138 @@ plt.bar("Boston U.", -2, color="gray")
 plt.savefig("example_plot.png", bbox_inches="tight")  # Save the plot as a PNG
 plt.show()  # Display the plot
 ```
+---
+
+# **New Material** (W4)
+
+### **19. For-loops for File Handling and Iteration**
+
+- **Using for-loops to Read Files**:
+    - A `for` loop can be used to iterate over each line in a file and process the data one line at a time.
+
+```python
+with open("data.txt", "r") as infile:
+    previous_value = 0  # Set an initial value for comparison
+    for line in infile:
+        current_value = float(line)  # Convert the line to a float
+        change = current_value - previous_value  # Calculate the change
+        previous_value = current_value  # Update the previous value for the next iteration
+
+        print("Current value:", current_value)
+        print("Change from previous:", change, "\n")
+```
+
+
+- **Using `range()` in for-loops**
+
+- **The `range()` Function**:
+    - The `range()` function generates a sequence of numbers. You can use it in a `for` loop to repeat actions a specific number of times.
+    - By default, `range(n)` generates numbers starting from 0 up to, but not including, `n`.
+
+```python
+for i in range(3):  # Loops 3 times (i will be 0, 1, 2)
+    print("This is loop number:", i)
+```
+
+- **Specifying a Start and End Value**:
+    - You can provide both a start and an end value with `range(start, end)`, where `start` is included, but `end` is not.
+
+```python
+for i in range(2, 5):  # Loops with i = 2, 3, 4
+    print("Current value of i:", i)
+```
+
+- **Using a Step Value**:
+    - You can also specify a step value using `range(start, end, step)` to skip numbers or count backwards.
+
+```python
+for i in range(0, 10, 2):  # Loops with i = 0, 2, 4, 6, 8
+    print("Even number:", i)
+```
+
+```python
+for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
+    print("Counting down:", i)
+```
+
+- **For-loops with `matplotlib`**:
+    - You can manually plot multiple points by calling `plt.plot()` inside a `for` loop.
+
+```python
+import matplotlib.pyplot as plt
+
+# Plot multiple points manually using a for-loop
+for i in range(3):
+    
+    point_x = i     
+    point_y = i * 2 
+    
+    # point coordinates after 1st iteration: 0, 0
+    # point coordinates after 2nd iteration: 1, 2
+    # point coordinates after 3rd iteration: 2, 4
+    
+    plt.plot(point_x, point_y, "o")  # Plot the point
+
+plt.show()
+```
+
+### **20. Conditional Statements: `if`, `elif`, `else`**
+
+- **Basic Conditional Logic**:
+    - Use `if`, `elif`, and `else` to handle different conditions.
+
+```python
+temperature = float(input("Enter the temperature: "))
+
+if temperature > 30:
+    print("It's hot outside.")
+elif temperature > 20:
+    print("It's warm.")
+else:
+    print("It's cold.")
+```
+
+- **Comparison Operators**:
+    - Use comparison operators to evaluate conditions.
+
+```python
+a = 10
+b = 20
+
+if a < b:
+    print("a is less than b")
+else:
+    print("a is greater than or equal to b")
+```
+
+### **21. Boolean Operators: `and`, `or`, `not`**
+
+- **Combining Conditions**:
+    - Use boolean operators to combine conditions in a single `if` statement.
+
+```python
+age = int(input("Enter your age: "))
+
+if age >= 18 and age < 65:
+    print("You're an adult.")
+elif age < 18:
+    print("You're a minor.")
+else:
+    print("You're a senior citizen.")
+```
+
+- **Negation with `not`**:
+    - Use `not` to reverse a condition.
+
+```python
+is_raining = False
+
+if not is_raining:
+    print("It's not raining. You don't need an umbrella.")
+else:
+    print("It's raining. Better take an umbrella.")
+```
+
 
 ---
 2024 Maciej Kos
