@@ -6,9 +6,11 @@ Initially based on: https://learnxinyminutes.com/docs/python/
   schedule: https://docs.google.com/document/d/1KDv5eRDMsIv0cbXdks3B1SaTD-9BIEeoWduqn3NrkFU/edit?usp=sharing
 - DS2000 lecture notes: https://course.ccs.neu.edu/ds2000/schedule.html
 - Canvas: https://northeastern.instructure.com/courses/
-- This cheat sheet: https://github.com/maciejkos/ds2001_cheat_sheet/blob/main/README.md
+- This cheat
+  sheet: https://github.com/maciejkos/ds2001_cheat_sheet/blob/main/README.md
 
 # **Weeks 1 and 2** (W1 and W2)
+
 ### **1. Python's `print()` Function**
 
 - Use `print()` to display output to the console.
@@ -22,7 +24,8 @@ print("And my name is:", name)  # => And my name is: Alex
 
 ### **2. Getting Input from the User**
 
-- Use `input()` to receive input from the user. The input is returned as a string.
+- Use `input()` to receive input from the user. The input is returned as a
+  string.
 
 ```python
 input_string_var = input("Enter some data: ")
@@ -149,13 +152,16 @@ b = a  # Point b at what a is pointing to
 text_to_print = "Hello " + "world!"
 print(text_to_print)  # this should be ok
 ```
+
 ---
 
 # **Week 3** (W3)
+
 ### **16. Math Functions**
 
 - **Rounding**:
-- Use `round()` to round numbers to a specific number of decimal places. (I showed this earlier.)
+- Use `round()` to round numbers to a specific number of decimal places. (I
+  showed this earlier.)
 
 ```python
 round(10.111111111)  # => 10 (defaults to rounding to nearest integer)
@@ -163,7 +169,8 @@ round(10.111111111, ndigits=2)  # => 10.11
 ```
 
 - **Finding Minimum and Maximum**:
-    - Use the `min()` and `max()` functions to find the smallest or largest values.
+    - Use the `min()` and `max()` functions to find the smallest or largest
+      values.
 
 ```python
 min(3, 1, 2)  # => 1
@@ -212,7 +219,8 @@ plt.show()
 ```
 
 - **Labeling Axes and Adding Titles**:
-    - Label axes using `plt.xlabel()` and `plt.ylabel()`, and add a title with `plt.title()`.
+    - Label axes using `plt.xlabel()` and `plt.ylabel()`, and add a title with
+      `plt.title()`.
 
 ```python
 plt.xlabel("Description of the x-axis")
@@ -233,7 +241,8 @@ plt.plot(2, 4, "s", color="blue", markersize=25)
 ```
 
 - **Adding a Legend**:
-    - Use the `label` parameter in `plt.plot()` and then display the legend with `plt.legend()`.
+    - Use the `label` parameter in `plt.plot()` and then display the legend with
+      `plt.legend()`.
 
 ```python
 plt.plot(x1, y1, "s", color="blue", label="point one")
@@ -258,7 +267,8 @@ plt.show()
 plt.axhline(40, color="black")
 ```
 
-- **Bar Chart**: Create a bar chart by specifying the x-position and height of each bar.
+- **Bar Chart**: Create a bar chart by specifying the x-position and height of
+  each bar.
 
 ```python
 plt.bar(1, 10, color="magenta")
@@ -277,6 +287,7 @@ plt.bar("Boston U.", -2, color="gray")
 plt.savefig("example_plot.png", bbox_inches="tight")  # Save the plot as a PNG
 plt.show()  # Display the plot
 ```
+
 ---
 
 # **New Material** (W4)
@@ -284,72 +295,128 @@ plt.show()  # Display the plot
 ### **19. For-loops for File Handling and Iteration**
 
 - **Using for-loops to Read Files**:
-    - A `for` loop can be used to iterate over each line in a file and process the data one line at a time.
+    - A `for` loop can be used to iterate over each line in a file and process
+      the data one line at a time.
 
 ```python
 with open("data.txt", "r") as infile:
-    previous_value = 0  # Set an initial value for comparison
-    for line in infile:
-        current_value = float(line)  # Convert the line to a float
-        change = current_value - previous_value  # Calculate the change
-        previous_value = current_value  # Update the previous value for the next iteration
+	previous_value = 0  # Set an initial value for comparison
+	for line in infile:
+		current_value = float(line)  # Convert the line to a float
+		change = current_value - previous_value  # Calculate the change
+		previous_value = current_value  # Update the previous value for the next iteration
 
-        print("Current value:", current_value)
-        print("Change from previous:", change, "\n")
+		print("Current value:", current_value)
+		print("Change from previous:", change, "\n")
 ```
-
 
 - #### **Using `range()` in for-loops**
 
-    - The `range()` function generates a sequence of numbers. You can use it in a `for` loop to repeat actions a specific number of times.
-    - By default, `range(n)` generates numbers starting from 0 up to, but not including, `n`.
+    - The `range()` function generates a sequence of numbers. You can use it in
+      a `for` loop to repeat actions a specific number of times.
+    - By default, `range(n)` generates numbers starting from 0 up to, but not
+      including, `n`.
 
 ```python
 for i in range(3):  # Loops 3 times (i will be 0, 1, 2)
-    print("This is loop number:", i)
+	print("This is loop number:", i)
 ```
 
 - **Specifying a Start and End Value**:
-    - You can provide both a start and an end value with `range(start, end)`, where `start` is included, but `end` is not.
+    - You can provide both a start and an end value with `range(start, end)`,
+      where `start` is included, but `end` is not.
 
 ```python
 for i in range(2, 5):  # Loops with i = 2, 3, 4
-    print("Current value of i:", i)
+	print("Current value of i:", i)
 ```
 
 - **Using a Step Value**:
-    - You can also specify a step value using `range(start, end, step)` to skip numbers or count backwards.
+    - You can also specify a step value using `range(start, end, step)` to skip
+      numbers or count backwards.
 
 ```python
 for i in range(0, 10, 2):  # Loops with i = 0, 2, 4, 6, 8
-    print("Even number:", i)
+	print("Even number:", i)
 ```
 
 ```python
 for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
-    print("Counting down:", i)
+	print("Counting down:", i)
 ```
 
 #### **For-loops with `matplotlib`**:
-    
-- You can manually plot multiple points by calling `plt.plot()` inside a `for` loop.
+
+- You can manually plot multiple points by calling `plt.plot()` inside a `for`
+  loop.
 
 ```python
 import matplotlib.pyplot as plt
 
 # Plot multiple points manually using a for-loop
-for i in range(3): # Loops with i = 0, 1, 2;
+for i in range(3):  # Loops with i = 0, 1, 2;
 
-    # creates points: 0, 0 followed by 1, 2 followed by 2, 4
-    point_x = i     
-    point_y = i * 2 
+	# creates points: 0, 0 followed by 1, 2 followed by 2, 4
+	point_x = i
+	point_y = i * 2
 
-    plt.plot(point_x, point_y, "o")  # Plot the point
+	plt.plot(point_x, point_y, "o")  # Plot the point
 
 plt.show()
 ```
 
-### **20. Conditional Statements: `if`, `elif`, `else`**
+### **20. Boolean Values: `True` and `False`**
+
+- **What are Booleans?**
+    - Booleans are a special data type that can have one of two values: `True`
+      or `False`.
+    - We will need them for conditional statements.
+
+```python
+is_sunny = True
+is_raining = False
+
+print(is_sunny)  # Output: True
+print(is_raining)  # Output: False
+```
+
+- **Using Booleans in Conditional Statements**:
+    - Booleans can directly control the flow of your program in `if`, `elif`,
+      and `else` statements.
+
+```python
+is_sunny = True
+
+if is_sunny:
+	print("It's sunny outside!")
+else:
+	print("It's cloudy outside!")
+```
+
+- **Booleans from Comparisons**:
+    - Comparisons like `==`, `<`, and `>` return `True` or `False`.
+
+```python
+x = 5
+y = 10
+
+print(x == y)  # Output: False (because 5 is not equal to 10)
+print(x < y)  # Output: True  (because 5 is less than 10)
+```
+
+- **Logical Operators with Booleans**:
+    - Boolean values work with logical operators like `and`, `or`, and `not`.
+
+```python
+x = 10
+y = 20
+z = 30
+
+print(x < y and y < z)  # Output: True (both comparisons are True)
+print(not (x == z))  # Output: True (since x is not equal to z)
+```
+
+### **21. Conditional Statements: `if`, `elif`, `else`**
 
 - **Basic Conditional Logic**:
     - Use `if`, `elif`, and `else` to handle different conditions.
@@ -358,11 +425,11 @@ plt.show()
 temperature = float(input("Enter the temperature: "))
 
 if temperature > 30:
-    print("It's hot outside.")
+	print("It's hot outside.")
 elif temperature > 20:
-    print("It's warm.")
+	print("It's warm.")
 else:
-    print("It's cold.")
+	print("It's cold.")
 ```
 
 - **Comparison Operators**:
@@ -373,12 +440,12 @@ a = 10
 b = 20
 
 if a < b:
-    print("a is less than b")
+	print("a is less than b")
 else:
-    print("a is greater than or equal to b")
+	print("a is greater than or equal to b")
 ```
 
-### **21. Boolean Operators: `and`, `or`, `not`**
+### **22. Boolean Operators: `and`, `or`, `not`**
 
 - **Combining Conditions**:
     - Use boolean operators to combine conditions in a single `if` statement.
@@ -387,11 +454,11 @@ else:
 age = int(input("Enter your age: "))
 
 if age >= 18 and age < 65:
-    print("You're an adult.")
+	print("You're an adult.")
 elif age < 18:
-    print("You're a minor.")
+	print("You're a minor.")
 else:
-    print("You're a senior citizen.")
+	print("You're an older adult.")
 ```
 
 - **Negation with `not`**:
@@ -401,13 +468,12 @@ else:
 is_raining = False
 
 if not is_raining:
-    print("It's not raining. You don't need an umbrella.")
+	print("It's not raining. You don't need an umbrella.")
 else:
-    print("It's raining. Better take an umbrella.")
+	print("It's raining. Better take an umbrella.")
 ```
-
 
 ---
 2024 Maciej Kos
 
-version: 9/16/2024
+version: 9/24/2024
