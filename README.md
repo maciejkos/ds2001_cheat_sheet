@@ -337,15 +337,12 @@ for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
 import matplotlib.pyplot as plt
 
 # Plot multiple points manually using a for-loop
-for i in range(3):
-    
+for i in range(3): # Loops with i = 0, 1, 2;
+
+    # creates points: 0, 0 followed by 1, 2 followed by 2,4
     point_x = i     
     point_y = i * 2 
-    
-    # point coordinates after 1st iteration: 0, 0
-    # point coordinates after 2nd iteration: 1, 2
-    # point coordinates after 3rd iteration: 2, 4
-    
+
     plt.plot(point_x, point_y, "o")  # Plot the point
 
 plt.show()
