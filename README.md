@@ -463,7 +463,7 @@ else:
 		"x is not greater than 5 or equal to 3")  # This code runs because the other conditions were False
 ```
 
-### **How `if`, `elif`, and `else` Work Together**
+- **How `if`, `elif`, and `else` Work Together**
 
 - Python checks conditions **from top to bottom**, and only the **first `True`
   condition** runs its block of code. After a condition is satisfied, Python *
@@ -484,7 +484,7 @@ else:
 	print("You're an older adult.")  # This runs if age is 65 or above
 ```
 
-### **Summary of Differences**
+- **Summary of Differences**
 
 - **`if`**: Always comes first and checks the initial condition.
 - **`elif`**: Comes after `if` (and can be repeated multiple times) to check
