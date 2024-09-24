@@ -330,8 +330,9 @@ for i in range(5, 0, -1):  # Loops with i = 5, 4, 3, 2, 1 (counts down)
     print("Counting down:", i)
 ```
 
-- **For-loops with `matplotlib`**:
-    - You can manually plot multiple points by calling `plt.plot()` inside a `for` loop.
+#### **For-loops with `matplotlib`**:
+    
+- You can manually plot multiple points by calling `plt.plot()` inside a `for` loop.
 
 ```python
 import matplotlib.pyplot as plt
