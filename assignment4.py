@@ -215,6 +215,13 @@ def main():
 
 	DON'T START IF YOU HAVEN'T COMPLETED Q1 – Q3.
 
+	SCORING:
+		If you finish and submit by 6:55 (and your code is correct):
+			- 1 point
+			- 1 REAL sticker (come to Maciej to pick one)
+		If you finish and submit by 7:15 (and your code is correct):
+			- 1 REAL sticker (come to Maciej to pick one)
+
 	If you’ve completed the core assignment and are looking for a challenge or
 	more practice, you can work on  the following stretch goals. These tasks
 	will give you the chance to further improve your plotting and logic
