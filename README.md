@@ -299,6 +299,52 @@ plt.show()  # Display the plot
       the data one line at a time. Example file is [here](https://raw.githubusercontent.com/maciejkos/ds2001_cheat_sheet/refs/heads/main/data_quant_small.txt).
 
 ```python
+# Let's multiply numbers in a file by each other.
+
+# Initialize a variable to store the multiplication result
+# Right now, we set it to 1. We will update it later.
+# We are not setting it to 0, because multiplying numbers by 0 always gives 0.
+# (We would initialize to a different number if we were summing values.)
+
+result_multiplication = 1
+
+with open("data_quant_small.txt", "r") as infile:
+	"""
+	Let's assume the lines in data_quant_small.txt are:
+	3
+	1
+	2
+	"""
+	# This loop with have as many iterations as there are lines in the file (3)
+	for line in infile:
+		# this print will print:
+		# "3" on iteration 1
+		# "1" on iteration 2
+		# "2" on iteration 3
+		print(line)
+
+		# We can't multiply strings, so let's cast line to int and store it
+		# (On other occasions you may need to cast to another data type.)
+		current_value = int(line)
+
+		# Now, we can update our result.
+		result_multiplication = result_multiplication * current_value
+
+		# this print will print:
+		# 3 on iteration 1 (because 1*3 = 3)
+		# 3 on iteration 2 (because 3*1 = 3)
+		# 6 on iteration 3 (because 3*2 = 6)
+		print("The multiplication results on this loop iteration is: ",
+			result_multiplication)
+
+print("The final multiplication results is: ", result_multiplication)
+
+
+
+```
+
+
+```python
 with open("data_quant_small.txt", "r") as infile:
 	previous_value = 0  # Set an initial value for comparison
 	for line in infile:
@@ -441,8 +487,7 @@ if x > 5:
 elif x == 3:
 	print("x is equal to 3")  # This code runs because x == 3
 elif x < 5:
-	print(
-		"x is less than 5")  # This is skipped because the previous elif was True
+	print("x is less than 5")  # This is skipped because the previous elif was True
 ```
 
 - **What is `else`?**
@@ -459,8 +504,7 @@ if x > 5:
 elif x == 3:
 	print("x is equal to 3")
 else:
-	print(
-		"x is not greater than 5 or equal to 3")  # This code runs because the other conditions were False
+	print("x is not greater than 5 or equal to 3")  # This code runs because the other conditions were False
 ```
 
 - **How `if`, `elif`, and `else` Work Together**
@@ -481,7 +525,7 @@ elif age < 20:
 elif age < 65:
 	print("You're an adult.")  # This runs if age is 20-64
 else:
-	print("You're an older adult.")  # This runs if age is 65 or above
+	print("You're an older adult.")  # This runs if none of the above conditions is true
 ```
 
 - **Summary of Differences**
@@ -522,18 +566,6 @@ z = 30
 
 print(x < y and y < z)  # Output: True (both comparisons are True)
 print(not (x == z))  # Output: True (since x is not equal to z)
-```
-
-- **Negation with `not`**:
-    - Use `not` to reverse a condition.
-
-```python
-is_raining = False
-
-if not is_raining:
-	print("It's not raining. You don't need an umbrella.")
-else:
-	print("It's raining. Better take an umbrella.")
 ```
 
 ---
