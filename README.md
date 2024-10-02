@@ -290,7 +290,7 @@ plt.show()  # Display the plot
 
 ---
 
-# **New Material** (W4)
+# **Week 4** (W4)
 
 ### **19. For-loops for File Handling and Iteration**
 
@@ -567,7 +567,194 @@ z = 30
 print(x < y and y < z)  # Output: True (both comparisons are True)
 print(not (x == z))  # Output: True (since x is not equal to z)
 ```
+# **New Material** (W5)
 
+### **23. Lists**
+
+#### **Creating Lists**
+- Lists are ordered collections of items in Python.
+- You can create lists using square brackets `[]`.
+
+```python
+empty_list = [] # empty list 
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 2, 3, 4, 5]
+mixed = [1, "two", 3.0, True]
+```
+
+#### **Creating Lists from Strings using `split()`**
+- The `split()` method turns a string into a list of substrings.
+- By default, it splits on whitespace. You can specify a different delimiter.
+
+```python
+line_from_a_file = "10,20,30"
+numbers_list = line_from_a_file.split(",")
+print(numbers_list)  # Output: ['10', '20', '30']
+
+sentence = "The quick brown fox"
+words = sentence.split()
+print(words)  # Output: ['The', 'quick', 'brown', 'fox']
+
+# but things can get tricky
+clock_sounds = "tick, tock, tick, tock"
+
+print(clock_sounds.split())  # Oopsie! Too many commas ['tick,', 'tock,', 'tick,', 'tock']
+print(clock_sounds.split(", "))  # That's better: ['tick', 'tock', 'tick', 'tock']
+
+clock_sounds_no_commas = "tick tock tick tock"
+print(clock_sounds_no_commas.split(", ")) # what will this print?
+```
+
+```python
+with open("my_file.txt", "r") as infile:
+	# Let's assume these are the contents of "my_file.txt":
+	# Alex likes long naps.
+	# Jo likes lazy Sundays.
+	for row in infile:
+		words_as_list = row.split()
+		print(words_as_list) # 1st: ['Alex', 'likes', 'long', 'naps.']
+							#  2nd: ['Jo', 'likes', 'lazy', 'Sundays.']
+```
+
+#### **Accessing List Elements**
+- Use indexing to access elements in a list.
+- Indexing starts at 0 for the first element.
+- Use negative indexing to access elements from the end of the list.
+
+[//]: # (- You can also access a slice of a list using [:] )
+
+```python
+fruits = ["apple", "banana", "cherry", "pineapple", "kiwi"]
+print(fruits[0])   # Output: "apple"
+print(fruits[-1])  # Output: "kiwi" (last element)
+print(fruits[1])   # Output: "banana"
+```
+
+#### **List Iteration (for loops with lists)**
+- You can iterate through lists using `for` loops.
+
+```python
+# Iterating by value
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)  # 1st: "apple", 2nd: "banana", 3rd: "cherry"
+
+# Iterating by index
+for i in range(len(fruits)):
+  print(f"Index {i}: {fruits[i]}")  # 1st: i=0, prints "Index 0: apple"
+                                    # 2nd: i=1, prints "Index 1: banana"
+                                    # 3rd: i=2, prints "Index 2: cherry"
+```
+
+#### **Modifying Lists**
+- Lists are mutable, meaning you can change their contents.
+
+```python
+# Adding elements to a list using append()
+numbers = []
+numbers.append(1)
+numbers.append(2)
+print(numbers)  # Output: [1, 2]
+
+# Modifying elements by index
+fruits = ["apple", "banana", "cherry"]
+fruits[1] = "grape"
+print(fruits)  # Output: ["apple", "grape", "cherry"]
+```
+
+#### **Filtering Lists**
+- You can create new lists based on conditions using list comprehension or loops.
+
+```python
+# Using a for loop
+numbers = [1, 2, 3, 4, 5]
+evens = []
+odds = []
+for num in numbers:
+  if num % 2 == 0:
+      evens.append(num)  # 2nd: [2], 4th: [2, 4]
+  else:
+      odds.append(num)   # 1st: [1], 3rd: [1, 3], 5th: [1, 3, 5]
+  # After each iteration:
+  # 1st: evens=[], odds=[1]
+  # 2nd: evens=[2], odds=[1]
+  # 3rd: evens=[2], odds=[1, 3]
+  # 4th: evens=[2, 4], odds=[1, 3]
+  # 5th: evens=[2, 4], odds=[1, 3, 5]
+
+print(f"Even numbers: {evens}")  # [2, 4]
+print(f"Odd numbers: {odds}")   # [1, 3, 5]
+
+# Using list comprehension
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(even_numbers)  # Output: [2, 4, 6]
+```
+
+#### **Counting Elements Based on a Condition**
+- You can count occurrences in a list that meet certain conditions.
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_count = 0
+for number in numbers:
+	if number % 2 == 0:
+		even_count = even_count + 1
+print("There are", even_count, "even numbers.")  # Output: There are 5 even numbers.
+```
+
+#### **Converting List Elements**
+- You can convert elements in a list from one type to another.
+
+```python
+#  Converting strings to integers
+str_numbers = ['5', '4', '3', '2', '1']
+for i in range(len(str_numbers)):
+	str_numbers[i] = int(str_numbers[i])
+print(str_numbers)  # [5, 4, 3, 2, 1]
+```
+
+#### **Conditional List Appending**
+
+```python
+numbers = [10, 25, 3, 40, 5]
+even_numbers = []
+
+for num in numbers:
+	if num % 2 == 0:  # Condition: if the number is even
+		even_numbers.append(num)
+
+print("Even numbers:", even_numbers)  # Output: Even numbers: [10, 40]
+```
+
+### **24. Using the `random` Module**
+
+- The `random` module in Python allows you to generate random numbers.
+- It's useful for simulations, games, and making decisions based on chance.
+
+```python
+import random # first import random
+
+# Generate a random integer between 1 and 10 (inclusive, so 1 and 10 possible) 
+random_number = random.randint(1, 10)
+print("The random number is:", random_number)
+```
+
+- **Create many random numbers and store in a list**
+
+```python
+import random
+
+NUMBERS_TO_GENERATE = 10
+BOUND_LOWER = 10
+BOUND_UPPER = 50
+random_ints = []
+
+for i in range(NUMBERS_TO_GENERATE):
+	random_int = random.randint(BOUND_LOWER, BOUND_UPPER)
+	random_ints.append(random_int)
+    
+print(random_ints)
+```
 ---
 2024 Maciej Kos
 
