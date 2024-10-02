@@ -663,7 +663,6 @@ print(fruits)  # Output: ["apple", "grape", "cherry"]
 ```
 
 #### **Filtering Lists**
-- You can create new lists based on conditions using list comprehension or loops.
 
 ```python
 # Using a for loop
@@ -684,10 +683,6 @@ for num in numbers:
 
 print(f"Even numbers: {evens}")  # [2, 4]
 print(f"Odd numbers: {odds}")   # [1, 3, 5]
-
-# Using list comprehension
-even_numbers = [num for num in numbers if num % 2 == 0]
-print(even_numbers)  # Output: [2, 4, 6]
 ```
 
 #### **Counting Elements Based on a Condition**
