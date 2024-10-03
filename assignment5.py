@@ -109,12 +109,17 @@ def main():
 
 	"""
 	[OPTIONAL] Stretch goal for a sticker. 
-	
+
 	If you are finished and oh sooo bored, consider one addition to your code.
-	
+
 	a. Write a for loop that would repeat 1000 times.
-	c. Copy and paste your Q3 code inside that loop. We want 
-	that code to execute 1000 times. 
+	b. Copy and paste your Q3 code inside that loop, including the for-loop 
+	statement. By nesting your Q3 code inside the loop from (a), we make the 
+	Q3 code run 1000 times. 
+	c. Further explanation: after writing code for (a) and (b) above, you will 
+	have two loops. The loop from (b) will be nested inside the loop from (a). 
+	On each of the 1000 iterations of loop (a), your code from the (b) loop will 
+	iterate 50 times. In total, there will be 50,000 iterations.
 	d. Store your answer (the number of odd rolls in this loop iteration) 
 	in a new list called "answers". After the loop finishes, we want this 
 	list to have 1000 answers in it.
