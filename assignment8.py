@@ -561,7 +561,7 @@ def convert_and_filter(grid_string_numbers):
 	Example:
 	->  grid = [["1.5", "4.5"], ["3.5", "2.5"]]
 	->  convert_and_filter(grid)
-	Original values converted to floats: [[1.5, 2.5], [3.5, 4.5]]
+	Original values converted to floats: [[1.5, 4.5], [3.5, 2.5]]
 	Average value: 3.0
 	Values above average: [4.5, 3.5]
 
