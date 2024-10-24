@@ -62,12 +62,13 @@ A 2D list is a collection of collections.
 A 3D list is a collection of 2D collections
 
 3d_list = [
-	2d_list,
-	[
-        ["a", "b", "c"],
-        ["d", "e", "f"],
-		["g", "h", "i"]
-    ] # this is another 2d lists
+		2d_list,
+		[
+        		["a", "b", "c"],
+        		["d", "e", "f"],
+			["g", "h", "i"]
+   
+    		] # this is another 2d lists
 ]
 
 To make describing and reasoning about 2D list easier, we use two
@@ -76,10 +77,10 @@ conventions. (But there are more.)
 1) A 2D list is a list of sublists; each sublist contains elements
 
 list_of_sublist =	[
-		["a", "b", "c"], # sublist 0 with 3 elements
-		["d", "e", "f"], # sublist 1
-		["g", "h", "i"]  # sublist 2
-    ]
+				["a", "b", "c"], # sublist 0 with 3 elements
+				["d", "e", "f"], # sublist 1
+				["g", "h", "i"]  # sublist 2
+    			]
 
 2) A 2D list is a grid (or a matrix) of rows; each row has columns
 
@@ -118,6 +119,7 @@ Easy problems; if you can't solve them, it means you are falling behind.
 Ask Maciej or TAs for a consult during office hours.
 """
 
+
 """
 Problem 1
 """
@@ -154,6 +156,7 @@ print("\nP1:") # don't change this
 new_grid = create_simple_grid() # don't change this
 print("new_grid:", new_grid) # don't change this
 
+
 """
 Problem 2
 """
@@ -186,9 +189,10 @@ def print_matrix_elements(matrix):
 
 
 print("\nP2:") # don't change this
-print("\nPrint_matrix_elements: ")  # don't change this
-print_matrix_elements([[1, 2], [3, 4]])  # don't change this
+print("\nPrint_matrix_elements: ") # don't change this
+print_matrix_elements([[1, 2], [3, 4]]) # don't change this
 
+		
 """
 Problem 3
 """
@@ -264,6 +268,7 @@ print("\nP4:") # don't change this
 occurrences_n =  count_value([[1, 0, 1], [0, 1, 0], [0, 0, 0]], 1)
 print("occurrences_n:", occurrences_n)
 
+
 """
 Problem 5
 """
@@ -300,6 +305,7 @@ print("\nP5:") # don't change this
 print("find_maximum:", find_maximum([[1, 2], [3, 4]])) # don't change this
 
 """ Medium difficulty problems """
+
 
 """
 Problem 6
@@ -340,7 +346,6 @@ def is_sorted(numbers):
 print("\nP6:") # don't change this
 print("is_sorted: ", is_sorted([1, 2, 3, 4, 5])) # don't change this
 print("is_sorted: ", is_sorted([1, 3, 2, 4, 5])) # don't change this
-
 
 
 """
@@ -384,7 +389,6 @@ print("create_index_sum_grid: ", create_index_sum_grid(3)) # don't change this
 """
 Problem 8
 """
-
 
 def multiply_specific_positions(grid, factor, positions):
 	"""
@@ -441,6 +445,7 @@ positions = [[0, 0], [1, 1], [2, 2]] # don't change this
 multiply_specific_positions(grid=grid_2d, factor=2, positions=positions) # don't change this
 
 """ Hard problems """
+
 
 """
 Problem 9 
@@ -597,7 +602,6 @@ print("\nP11:") # don't change this
 grid = [["1.5", "4.5"], ["3.5", "2.5"]] # don't change
 values_above_average = convert_and_filter(grid) # don't change
 print("Returned values above average:", values_above_average) # don't change
-
 
 
 # REMINDER
