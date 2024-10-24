@@ -1,6 +1,6 @@
 """
 Maciej Kos
-DS 2001 - Assignment 8
+DS 2001 - Assignment ︂8
 Oct 23/24, 2024
 
 Copyright 2024 Maciej Kos
@@ -271,7 +271,7 @@ Problem 5
 def find_maximum(matrix):
 	"""
 	[Concept: 2D Lists - Finding Maximum]
-	Finds the largest number in a 2D list.
+	Finds the largest number in a 2D ︂list.
 	Hint: Start with first number and compare with all others
 
 	Example:
