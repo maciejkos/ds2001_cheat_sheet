@@ -1,6 +1,6 @@
 """
 Maciej Kos
-DS 2001 - Assignment ︂9
+DS 2001 - Assignment 9
 Oct 30/31, 2024
 
 Copyright 2024 Maciej Kos
