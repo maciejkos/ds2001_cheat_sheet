@@ -567,7 +567,8 @@ z = 30
 print(x < y and y < z)  # Output: True (both comparisons are True)
 print(not (x == z))  # Output: True (since x is not equal to z)
 ```
-# **New Material** (W5)
+
+# **Week 5** (W5)
 
 ### **23. Lists**
 
@@ -663,6 +664,7 @@ print(fruits)  # Output: ["apple", "grape", "cherry"]
 ```
 
 #### **Filtering Lists**
+- You can create new lists based on conditions using list comprehension or loops.
 
 ```python
 # Using a for loop
@@ -683,6 +685,10 @@ for num in numbers:
 
 print(f"Even numbers: {evens}")  # [2, 4]
 print(f"Odd numbers: {odds}")   # [1, 3, 5]
+
+# Using list comprehension
+even_numbers = [num for num in numbers if num % 2 == 0]
+print(even_numbers)  # Output: [2, 4, 6]
 ```
 
 #### **Counting Elements Based on a Condition**
@@ -697,7 +703,7 @@ for number in numbers:
 print("There are", even_count, "even numbers.")  # Output: There are 5 even numbers.
 ```
 
-#### **Converting List Elements**
+### **Converting List Elements**
 - You can convert elements in a list from one type to another.
 
 ```python
@@ -708,7 +714,7 @@ for i in range(len(str_numbers)):
 print(str_numbers)  # [5, 4, 3, 2, 1]
 ```
 
-#### **Conditional List Appending**
+### **Conditional List Appending**
 
 ```python
 numbers = [10, 25, 3, 40, 5]
@@ -750,7 +756,179 @@ for i in range(NUMBERS_TO_GENERATE):
     
 print(random_ints)
 ```
+
+# **New Material** (W8)
+### **25. Dictionaries**
+
+#### **Creating Dictionaries**
+- A dictionary is a collection of key-value pairs. Unlike lists which use numerical
+indices, dictionaries use keys to access values. 
+- Keys must be unique and immutable (strings, numbers, or tuples). Lists are 
+  mutable, so lists can't be dictionary keys. 
+- You can create lists using curly brackets `{}`.
+
+```python
+my_dict = {} # empty dict 
+simple_dict = {
+    "key1": "value1",
+    "key2": "value2"
+} # a dict with values and keys 
+product_quantity = {"apples": 3, "kiwis": 1} # another dict
+print(product_quantity) # Output: {"apples": 3, "kiwis": 1}
+```
+
+#### **Accessing Dictionary Elements**
+- Use square brackets `[]` with the key to access values
+- Use `get()` method for safe access (returns `None` if key doesn't exist); 
+  useful, if you are not sure a key exists
+
+```python
+product_quantity = {"apples": 3, "kiwis": 1}
+print(product_quantity["kiwis"])   # Output: 1
+
+print(product_quantity["eggs"])  # Raises KeyError: 'eggs' 
+
+# Using get() is safer
+product_quantity.get("eggs")  # Returns None, no error
+```
+
+#### **Adding and Updating Dictionaries**
+- Use square brackets `[]` to add new key-value pairs or update existing ones
+- Keys must be unique - adding a value with an existing key updates the value
+
+```python
+# Adding new elements
+product_quantity = {"apples": 3, "kiwis": 1}
+product_quantity["bananas"] = 2
+product_quantity["berries"] = 100
+print(product_quantity)  # Output: {'apples': 3, 'kiwis': 1, 'bananas': 2, 'berries': 100}
+
+# Updating existing elements
+product_quantity["berries"] = 10
+print(product_quantity)  # Output: {'apples': 3, 'kiwis': 1, 'bananas': 2, 'berries': 10}
+
+# Starting with empty dictionary
+product_quantity = {}
+product_quantity["apples"] = 3
+product_quantity["kiwis"] = 2
+print(product_quantity)  # Output: {'apples': 3, 'kiwis': 2}
+```
+
+#### **Removing Dictionary Elements**
+- Use `del` to remove specific key-value pairs
+- Use `clear()` to empty the dictionary
+- Use `del` on the dictionary itself to delete it completely
+
+```python
+product_quantity = {"apples": 3, "kiwis": 1, "bananas": 2, "berries": 10}
+
+# Remove one key-value pair
+del product_quantity["bananas"]
+print(product_quantity)  # Output: {'apples': 3, 'kiwis': 1, 'berries': 10}
+
+# Clear all items
+product_quantity.clear()
+print(product_quantity)  # Output: {}
+
+# Delete the dictionary completely
+del product_quantity
+print(product_quantity)  # Raises NameError: name 'product_quantity' is not defined
+```
+
+#### **Dictionary Methods and Iteration**
+- `keys()`: Get all keys
+- `values()`: Get all values
+- `items()`: Get all key-value pairs as tuples
+- Multiple ways to iterate through dictionaries
+
+```python
+familiar_amount = {'cats': 3, 'owls': 1, 'ferrets': 2}
+
+# Getting keys, values, and items
+print(familiar_amount.keys())    # Output: dict_keys(['cats', 'owls', 'ferrets'])
+print(familiar_amount.values())  # Output: dict_values([3, 1, 2])
+print(familiar_amount.items())   # Output: dict_items([('cats', 3), ('owls', 1), ('ferrets', 2)])
+
+# Iterating through keys
+for familiar in familiar_amount.keys():
+    print(familiar)
+    # Output: cats
+    #         owls
+    #         ferrets
+
+# Iterating through values
+for amount in familiar_amount.values():
+    print(amount)
+    # Output: 3
+    #         1
+    #         2
+
+# Iterating through items (returns tuples)
+for item in familiar_amount.items():
+    print(item)
+    # Output: ('cats', 3)
+    #         ('owls', 1)
+    #         ('ferrets', 2)
+
+# Unpacking tuples while iterating (most common method)
+for familiar, amount in familiar_amount.items():
+    print(f"{familiar}: {amount}")
+    # Output: cats: 3
+    #         owls: 1
+    #         ferrets: 2
+```
+
+#### **Understanding Tuple Unpacking**
+- Tuple unpacking works with both tuples and lists
+- The number of variables must match the number of values
+
+```python
+# Basic tuple unpacking
+f, a = 'cats', 3
+print(f, a)  # Output: cats 3
+
+# List unpacking
+f, a = ['cats', 3]
+print(f, a)  # Output: cats 3
+
+# Tuple unpacking
+f, a = ('cats', 3)
+print(f, a)  # Output: cats 3
+
+# Error case: too many values
+f, a = ['cats', 3, "poof"]  # Raises ValueError: too many values to unpack (expected 2)
+```
+
+#### **Converting Between Lists and Dictionaries**
+- You can create a dictionary from two parallel lists (keys and values)
+- You can extract keys and values from a dictionary into separate lists
+
+```python
+# Lists to Dictionary
+familiars = ["cats", "owls", "ferrets"]
+amounts = [3, 1, 2]
+
+familiar_amount = {}
+for i in range(len(familiars)):
+    familiar = familiars[i]
+    amount = amounts[i]
+    familiar_amount[familiar] = amount
+
+print(familiar_amount)  # Output: {'cats': 3, 'owls': 1, 'ferrets': 2}
+
+# Dictionary to Lists
+familiar_amount = {'cats': 3, 'owls': 1, 'ferrets': 2}
+familiars = []
+amounts = []
+
+for familiar, amount in familiar_amount.items():
+    familiars.append(familiar)
+    amounts.append(amount)
+
+print(familiars)  # Output: ['cats', 'owls', 'ferrets']
+print(amounts)    # Output: [3, 1, 2]
+```
 ---
 2024 Maciej Kos
 
-version: 9/24/2024
+version: 10/30/2024
