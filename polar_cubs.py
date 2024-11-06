@@ -34,6 +34,10 @@ Date:
 # If you have trouble with any step, ask a TA for help!
 
 """
+ ->>>> PLEASE UPLOAD BOTH assignment10.py AND polar_cubs.py <<<< -
+"""
+
+"""
 Functions (and a class) that you can use. Please don't edit them. 
 """
 
@@ -755,3 +759,7 @@ def describe(df, numeric_columns):
 
 
 		return result
+
+"""
+ ->>>> PLEASE UPLOAD BOTH assignment10.py AND polar_cubs.py <<<< -
+"""
