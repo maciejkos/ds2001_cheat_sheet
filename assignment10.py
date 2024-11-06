@@ -70,6 +70,8 @@ Finally,
 - feel free to reuse any of the code *you* wrote for DS2000 homework and DS2001 
 assignments.
 
+ ->>>> PLEASE UPLOAD BOTH assignment10.py AND polar_cubs.py <<<< -
+
 Good luck!
 """
 
