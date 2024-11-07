@@ -34,10 +34,6 @@ Date:
 # If you have trouble with any step, ask a TA for help!
 
 """
- ->>>> PLEASE UPLOAD BOTH assignment10.py AND polar_cubs.py <<<< -
-"""
-
-"""
 Functions (and a class) that you can use. Please don't edit them. 
 """
 
@@ -353,29 +349,34 @@ def read_csv(filename):
 	df = {}
 
 	# Step 1: Open the file and read all lines using .readlines()
+	# Unlike readline(), .readlines() (plural), returns a list of lines.
+	# Each element in the file is a different line.
 	with # finish this line
 		lines = # finish this line
 
-		# Check if the file is empty. Ff it is empty, return an empty dict.
+		# Check if the file is empty. If it is empty, return an empty dict.
+		# Hint: How many lines are in an empty file?
 		if # finish this conditional
 			print("Error: The file is empty.")
 			return {}
 
 		# Step 2: Process the first line as headers
-		headers = # finish this line
-		for header in headers:
-			# Initialize a list for each column in `df`
-
+		# Hint: You will be stripping and splitting here. Stripping removes
+		# whitespace characters, like \n.
 		# Example after Step 2 (if headers are "name", "city", "score"):
 		# df = {'name': [], 'city': [], 'score': []}
+		headers = # finish this line
+		for header in headers:
+			# Initialize a list for each column ("header") in `df`
 
-		# Step 3: Process each subsequent line as a data row
+		# Step 3: Process each subsequent line as a row of data
 		for line in lines[1:]:
 			values_to_process = # strip whitespace and convert to a
-			# list
+			# list; `values_to_process` will store contents of the current line
+			# like ["Alice","NY","85"]
 			values = [] # this is a hint, leave it here; don't change this; use this
 
-			# `values_to_process` may contain empty strings ''
+			# Note that `values_to_process` may contain empty strings ''
 			# Iterate over values in the `values_to_process` list. If a value
 			# is not an empty string, append it to `values`. If it is an empty
 			# string, append None instead.
@@ -383,15 +384,15 @@ def read_csv(filename):
 
 			# Assign each value from `values` to its respective column based on
 			# headers
-			for i in range(len(headers)):
-				df[headers[i # finish this statement
-
 			# Example after Step 3 (with 3 rows of data):
 			# df = {
 			#     'name': ['Alice', 'Bob', 'Charlie'],
 			#     'city': ['NY', 'LA', 'NY'],
 			#     'score': ['85', '92', '88']
 			# }
+			for i in range(len(headers)):
+				df[headers[i # finish this statement
+
 
 	# Step 4: Here, we add an 'index' column with sequential integers from 0 to
 	# num_rows - 1. You don't have to write any code here.
@@ -484,13 +485,17 @@ def filter_df(df, column, value, condition="=="):
 		# It will be a very long if-statement that checks different things
 		# depending on the condition parameter. We started you off
 		# condition = "==".
+		# Hint: the "==" condition is not finished; check the docstring to
+		# figure out what variable to place after == below.
 		if (condition == "==" and df[column][i] == # finish this line
 
 			# Step 3: Add the data for this row to `filter_df`
+			# Hint: In what data structure are the values of `filtered_df[col]`
+		    # stored?
 			for col in df:
 				filtered_df[col]# finish this statement
 
-	# Step 4: Return `filter_df` with only the rows that matched the condition
+	# Step 4: Return `filtered_df` with only the rows that matched the condition
 	return
 
 """
@@ -555,7 +560,7 @@ def groupify(df, by_column):
 	# from the docstring.
 	unique_values = [] # leave it here; don't change this;
 	for value in df[by_column]: # leave it here; don't change this;
-		# finish this loop
+		# finish this loop; after the loop unique_values should be ['NY', 'LA'],
 
 
 	# Step 2: Initialize the `result` dictionary for each unique group
@@ -565,14 +570,27 @@ def groupify(df, by_column):
 	# 	'LA': {
 	# 		'name': [], 'city': [], 'score': [], 'index': []}}
 	result = {} # leave it here; don't change this;
+	# now use a nested for-loop populate `result` with keys and items like we
+	# showed above.
+	# Hint: While Python lets you do this:
+	#   my_dict = {}
+	#   my_dict["new_key_1"] = "value_1"
+	# you cannot do this:
+	#   my_dict = {}
+	#   my_dict["new_key_1"]["nested_key_1] = "value_2"
+	# You need to do it in steps.
+	#   my_dict = {}
+	#   my_dict["new_key_1"] = {}
+	#   my_dict["new_key_1"]["nested_key_1] = "value_2"
 
 
-	# Step 3: Populate each group with corresponding rows from `df`
+	# Step 3: Populate each group in `result` with corresponding rows from `df`
 	for i in range(len(df[by_column])): # leave it here; don't change this;
 		group_val = df[by_column][i] # leave it here; don't change this;
 		for col in df: # leave it here; don't change this;
 			# on the first iteration, this loop should append 'Alice' from df
 			# to group `NY` column `name` in the result dictionary
+			# Hint: what is stored in group_val specifically?
 
 	return result
 
@@ -668,14 +686,15 @@ def groupby(df, by_column, agg_function='mean'):
 		# finish this for loop
 	result[by_column] = # finish this line
 
-	# Step 3: Apply the aggregation function to each group for all columns except `by_column`
+	# Step 3: Apply the aggregation function to each group for all columns except `
+	# by_column`.
 	# We aggregate the remaining columns based on the group structure from
 	# `groupify`.
-	# A) We need to decide what columns to analyze. We need to ignore the
+	# A) We also need to decide what columns to analyze. We need to ignore the
 	# following columns: 1) the `by_column`, 2) columns that do not contain
-	# floats or ints, if the `agg_function` is `mean` or `sum`
+	# floats or ints, if the `agg_function` is `mean` or `sum`.
 
-	column_names_to_analyze = [] # leave it here; don't change this;
+	column_names_to_analyze = [] # leave it here; don't change it; keep reading.
 
 	# You will need to write a for-loop that appends columns to
 	# `column_names_to_analyze`.
@@ -697,12 +716,13 @@ def groupby(df, by_column, agg_function='mean'):
 
 		# Step 4: Compute the aggregation for each unique group
 		for group_key, group_values in grouped_df.items():
-			# For each group, retrieve the values for the current column `col`
-			values = # finish this line
-			# Example for Step 4:
+			# For each group, retrieve the values for the current column.
 			# If `column_name` is "score" and `group_key` is "NY", `values` would be:
-			# values = [85, 88, 90] for group 'NY' in the "score" column
+			# values = [85, 88, 90] for group 'NY' in the "score" column.
 			# This list will be aggregated to produce a single value.
+			# Hint: make sure you really know what is stored in group_key
+			# and group_values.
+			values = # finish this line
 
 			# Apply the specified aggregation function to these values
 			if agg_function == 'mean':
@@ -759,7 +779,3 @@ def describe(df, numeric_columns):
 
 
 		return result
-
-"""
- ->>>> PLEASE UPLOAD BOTH assignment10.py AND polar_cubs.py <<<< -
-"""
